@@ -225,10 +225,10 @@
     .portfolio-card-title { font-family: var(--serif); font-size: 1.12rem; color: var(--ink); margin-bottom: .38rem; }
     .portfolio-card-desc { font-size: .81rem; color: var(--muted); line-height: 1.55; }
     .portfolio-card-body { padding: .9rem 1.4rem 1.4rem; }
-    .portfolio-stat { display: flex; justify-content: space-between; align-items: center; padding: .42rem 0; border-bottom: 1px solid var(--border-2); font-size: .81rem; }
+    .portfolio-stat { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 1.2rem; align-items: center; padding: .42rem 0; border-bottom: 1px solid var(--border-2); font-size: .81rem; }
     .portfolio-stat:last-child { border-bottom: none; }
     .portfolio-stat-label { color: var(--muted); }
-    .portfolio-stat-value { color: var(--teal); font-weight: 700; font-family: var(--mono); font-size: .78rem; }
+    .portfolio-stat-value { color: var(--teal); font-weight: 700; font-family: var(--mono); font-size: .78rem; text-align: right; word-break: break-word; }
 
     /* ── CONTACT ── */
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
