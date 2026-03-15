@@ -685,16 +685,15 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Jane" required /></div>
-            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" required /></div>
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvrnywg" method="POST">          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="Jane" required /></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith" required /></div>
           </div>
-          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="jane@company.com" required /></div>
-          <div class="form-group"><label for="company">Company</label><input type="text" id="company" placeholder="Acme Corp" /></div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
+          <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Acme Corp" /></div>
           <div class="form-group">
             <label for="role">Role Type</label>
-            <select id="role">
+            <select id="role" name="role_type">
               <option value="">Select a role type...</option>
               <option>VP / Director of Sales</option>
               <option>VP / Director of Marketing</option>
@@ -705,7 +704,7 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me about the opportunity..."></textarea></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"  placeholder="Tell me about the opportunity..."></textarea></div>
           <p class="form-note">I typically respond within one business day.</p>
           <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Send Message
@@ -740,20 +739,47 @@
       document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 16px rgba(26,44,61,.12)' : 'none';
     });
 
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const fname   = document.getElementById('fname').value;
-      const lname   = document.getElementById('lname').value;
-      const email   = document.getElementById('email').value;
-      const company = document.getElementById('company').value;
-      const role    = document.getElementById('role').value;
-      const message = document.getElementById('message').value;
-      const subject = encodeURIComponent(`Opportunity Inquiry from ${fname} ${lname}`);
-      const body    = encodeURIComponent(`Name: ${fname} ${lname}\nEmail: ${email}\nCompany: ${company}\nRole: ${role}\n\n${message}`);
-      window.location.href = `mailto:thadley3384@gmail.com?subject=${subject}&body=${body}`;
-      document.getElementById('formSuccess').style.display = 'block';
-      this.reset();
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const successMsg = document.getElementById('formSuccess');
+
+  // Disable button while sending
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
     });
+
+    if (response.ok) {
+      // Show success message
+      successMsg.style.display = 'block';
+      successMsg.textContent = '✓ Message sent! I\'ll be in touch within one business day.';
+      form.reset();
+      // Hide success message after 6 seconds
+      setTimeout(() => { successMsg.style.display = 'none'; }, 6000);
+    } else {
+      successMsg.style.display = 'block';
+      successMsg.style.background = 'rgba(220,38,38,.08)';
+      successMsg.style.borderColor = 'rgba(220,38,38,.3)';
+      successMsg.style.color = '#b91c1c';
+      successMsg.textContent = '✗ Something went wrong. Please try emailing me directly at thadley3384@gmail.com';
+    }
+  } catch (error) {
+    successMsg.style.display = 'block';
+    successMsg.textContent = '✗ Could not send message. Please email me directly at thadley3384@gmail.com';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+  }
+});
   </script>
 </body>
 </html>
