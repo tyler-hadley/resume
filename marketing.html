@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NV5LHCR6');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyler Hadley — Marketing Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f0f4f8;
+      --bg-2:       #e4ecf3;
+      --surface:    #ffffff;
+      --teal:       #0d9488;
+      --teal-light: #14b8a6;
+      --teal-dim:   #0f766e;
+      --teal-glow:  rgba(13,148,136,.13);
+      --teal-faint: rgba(13,148,136,.07);
+      --ink:        #1a2c3d;
+      --ink-2:      #334e68;
+      --muted:      #627d98;
+      --border:     rgba(26,44,61,.10);
+      --border-2:   rgba(26,44,61,.06);
+      --serif:      'DM Serif Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+      --mono:       'Space Mono', monospace;
+      --radius:     10px;
+      --transition: .28s cubic-bezier(.4,0,.2,1);
+      --shadow-sm:  0 1px 4px rgba(26,44,61,.08);
+      --shadow-md:  0 4px 16px rgba(26,44,61,.10);
+      --shadow-lg:  0 8px 32px rgba(26,44,61,.13);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    ::selection { background: var(--teal-light); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-2); }
+    ::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(240,244,248,.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .78rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; transition: color var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: var(--teal) !important; color: #fff !important; padding: .4rem 1rem; border-radius: 5px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--teal-dim) !important; color: #fff !important; }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: .3rem; cursor: pointer; }
+    .nav-dropdown > a svg { transition: transform var(--transition); }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-md);
+      min-width: 210px; padding: .5rem 0; z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: .65rem;
+      padding: .55rem 1.1rem; font-size: .78rem; color: var(--ink-2);
+      text-decoration: none; text-transform: none; letter-spacing: 0;
+      font-weight: 500; transition: background var(--transition), color var(--transition);
+      border-left: 3px solid transparent;
+    }
+    .dropdown-menu a:hover { background: var(--teal-faint); color: var(--teal); border-left-color: var(--teal); }
+    .dropdown-menu a.active { color: var(--teal); border-left-color: var(--teal); background: var(--teal-faint); }
+    .dropdown-menu .dm-label {
+      font-family: var(--mono); font-size: .6rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted); padding: .45rem 1.1rem .2rem;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 7rem 4rem 4rem;
+      position: relative; overflow: hidden;
+      background: linear-gradient(155deg, #deeaf5 0%, #edf3f9 40%, #e2eef7 100%);
+    }
+    .hero-geo { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .hero-geo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background:
+        radial-gradient(ellipse 48% 55% at 76% 46%, rgba(13,148,136,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 28% 28% at 6% 82%, rgba(13,148,136,.05) 0%, transparent 55%);
+    }
+    .hero-text { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--mono); font-size: .7rem; color: var(--teal);
+      letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 1.4rem;
+      background: var(--teal-faint); border: 1px solid rgba(13,148,136,.22);
+      padding: .3rem .85rem; border-radius: 50px;
+    }
+    .hero-name { font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1.05; color: var(--ink); margin-bottom: .6rem; }
+    .hero-name em { color: var(--teal); font-style: italic; }
+    .hero-name-container { display: flex; align-items: center; gap: 1rem; }
+    .mobile-photo { display: none; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
+    .hero-title { font-size: 1.05rem; color: var(--ink-2); font-weight: 400; margin-bottom: .9rem; max-width: 480px; line-height: 1.7; }
+    .hero-roles { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    .role-pill {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .8rem; font-weight: 500; color: var(--ink-2);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: .35rem .85rem; border-radius: 50px; box-shadow: var(--shadow-sm);
+    }
+    .role-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.2rem; }
+    .tag { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; padding: .28rem .75rem; border: 1px solid rgba(13,148,136,.28); color: var(--teal-dim); border-radius: 4px; background: var(--teal-faint); }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--teal); color: #fff; padding: .72rem 1.55rem; border-radius: var(--radius); font-weight: 600; font-size: .9rem; text-decoration: none; transition: var(--transition); border: 2px solid var(--teal); box-shadow: 0 2px 12px rgba(13,148,136,.28); }
+    .btn-primary:hover { background: var(--teal-dim); border-color: var(--teal-dim); transform: translateY(-2px); box-shadow: 0 4px 18px rgba(13,148,136,.38); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: .5rem; background: var(--surface); color: var(--ink-2); padding: .72rem 1.55rem; border-radius: var(--radius); font-weight: 500; font-size: .9rem; text-decoration: none; border: 2px solid var(--border); transition: var(--transition); box-shadow: var(--shadow-sm); }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; z-index: 2; }
+    .photo-frame { position: relative; width: 330px; height: 390px; }
+    .photo-frame::before { content: ''; position: absolute; top: 14px; left: 14px; right: -14px; bottom: -14px; border: 2px solid var(--teal-light); border-radius: var(--radius); opacity: .38; }
+    .photo-placeholder { width: 100%; height: 100%; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: var(--shadow-lg); }
+    .photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .location-badge {
+      position: absolute; bottom: -1.4rem; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: .5rem 1rem;
+      font-size: .72rem; color: var(--muted);
+      white-space: nowrap; z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: .2rem;
+      box-shadow: var(--shadow-sm); text-align: center; min-width: 220px;
+    }
+    .location-badge .loc-main { display: flex; align-items: center; gap: .4rem; }
+    .location-badge span { color: var(--teal); font-weight: 600; }
+    .location-badge .loc-sub { font-size: .68rem; color: var(--muted); }
+
+    /* SECTIONS */
+    section { padding: 5.5rem 4rem; }
+    .section-alt   { background: var(--bg-2); }
+    .section-white { background: var(--surface); }
+    .section-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: .75rem; display: flex; align-items: center; gap: .6rem; }
+    .section-label::after { content: ''; display: block; width: 36px; height: 1px; background: var(--teal); opacity: .4; }
+    .section-heading { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.1; color: var(--ink); margin-bottom: .9rem; }
+    .section-sub { color: var(--muted); max-width: 520px; font-size: .93rem; margin-bottom: 2.8rem; }
+
+    /* METRICS */
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 1.2rem; }
+    .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.3rem; position: relative; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-sm); }
+    .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+    .metric-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(13,148,136,.2); }
+    .metric-number { font-family: var(--serif); font-size: 2.2rem; color: var(--teal); line-height: 1; margin-bottom: .3rem; }
+    .metric-label { font-size: .79rem; color: var(--ink-2); font-weight: 500; line-height: 1.4; }
+    .metric-context { font-size: .7rem; color: var(--muted); margin-top: .38rem; }
+
+    /* EXPERIENCE */
+    .timeline { position: relative; max-width: 820px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--teal), transparent); }
+    .timeline-item { padding-left: 2.2rem; padding-bottom: 3rem; position: relative; }
+    .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 2px solid var(--surface); }
+    .timeline-date { font-family: var(--mono); font-size: .7rem; color: var(--teal); letter-spacing: .1em; margin-bottom: .4rem; }
+    .timeline-role { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); margin-bottom: .2rem; }
+    .timeline-company { font-size: .84rem; color: var(--muted); margin-bottom: .9rem; }
+    .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: .48rem; }
+    .timeline-bullets li { font-size: .87rem; color: var(--ink-2); padding-left: 1.2rem; position: relative; line-height: 1.6; }
+    .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: .78rem; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(275px, 1fr)); gap: 1.2rem; }
+    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm); }
+    .skill-group-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .9rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .skill-tag { font-size: .77rem; background: var(--bg); border: 1px solid var(--border); padding: .28rem .7rem; border-radius: 4px; color: var(--ink-2); transition: var(--transition); }
+    .skill-tag:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-faint); }
+
+    /* PORTFOLIO */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(295px, 1fr)); gap: 1.2rem; }
+    .portfolio-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .portfolio-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: rgba(13,148,136,.22); }
+    .portfolio-card-header { padding: 1.4rem 1.4rem .75rem; border-bottom: 1px solid var(--border-2); }
+    .portfolio-category { font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .45rem; }
+    .portfolio-card-title { font-family: var(--serif); font-size: 1.12rem; color: var(--ink); margin-bottom: .38rem; }
+    .portfolio-card-desc { font-size: .81rem; color: var(--muted); line-height: 1.55; }
+    .portfolio-card-body { padding: .9rem 1.4rem 1.4rem; }
+    .portfolio-stat { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 1.2rem; align-items: center; padding: .42rem 0; border-bottom: 1px solid var(--border-2); font-size: .81rem; }
+    .portfolio-stat:last-child { border-bottom: none; }
+    .portfolio-stat-label { color: var(--muted); }
+    .portfolio-stat-value { color: var(--teal); font-weight: 700; font-family: var(--mono); font-size: .78rem; text-align: right; word-break: break-word; }
+
+    /* CONTACT CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--ink) 0%, #1e3a52 100%);
+      padding: 5rem 4rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(13,148,136,.12) 0%, transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+    .cta-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: .75rem; }
+    .cta-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+    .cta-heading em { color: var(--teal-light); font-style: italic; }
+    .cta-sub { color: rgba(255,255,255,.6); font-size: .95rem; margin-bottom: 2rem; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--teal); color: #fff; padding: .85rem 2rem; border-radius: var(--radius); font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); border: 2px solid var(--teal); box-shadow: 0 4px 20px rgba(13,148,136,.4); }
+    .btn-cta-primary:hover { background: var(--teal-dim); border-color: var(--teal-dim); transform: translateY(-2px); }
+    .btn-cta-secondary { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: rgba(255,255,255,.8); padding: .85rem 2rem; border-radius: var(--radius); font-weight: 500; font-size: .95rem; text-decoration: none; border: 2px solid rgba(255,255,255,.2); transition: var(--transition); }
+    .btn-cta-secondary:hover { border-color: rgba(255,255,255,.5); color: #fff; transform: translateY(-2px); }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-family: var(--mono); font-size: .65rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem;
+    }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { color: var(--border); }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,.48); padding: 1.8rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { font-family: var(--serif); font-size: 1.1rem; color: #fff; }
+    .footer-brand span { color: var(--teal-light); }
+    .footer-copy { font-size: .76rem; }
+    .footer-resume { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; color: var(--teal-light); text-decoration: none; border: 1px solid rgba(20,184,166,.33); padding: .38rem .85rem; border-radius: 5px; transition: var(--transition); }
+    .footer-resume:hover { background: rgba(20,184,166,.1); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .delay-4 { transition-delay: .4s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); padding: 1.4rem; border-bottom: 1px solid var(--border); gap: .9rem; box-shadow: var(--shadow-md); }
+      .hamburger { display: flex; }
+      .dropdown-menu { position: static; transform: none; box-shadow: none; border: none; border-left: 2px solid var(--teal-faint); padding: .25rem 0; margin-left: .5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
+      .hero-visual { display: none; }
+      .mobile-photo { display: block; }
+      section { padding: 4rem 1.5rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV5LHCR6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Tyler <span>Hadley</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown">
+        <a href="#" class="active">
+          Disciplines
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dm-label">By Focus Area</div>
+          <a href="marketing.html" class="active">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Marketing
+          </a>
+          <a href="customer-success.html">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Customer Success
+          </a>
+          <a href="project-management.html">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Project Management
+          </a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#metrics">Results</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-geo">
+      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs><style>.gc{fill:none;stroke:#0d9488}.gf{fill:#0d9488;stroke:none}</style></defs>
+        <circle class="gc" cx="1100" cy="200" r="320" stroke-width="1" opacity="0.07"/>
+        <circle class="gc" cx="1100" cy="200" r="220" stroke-width="1" opacity="0.08"/>
+        <circle class="gc" cx="1100" cy="200" r="130" stroke-width="1" opacity="0.09"/>
+        <circle class="gc" cx="180" cy="720" r="260" stroke-width="1" opacity="0.06"/>
+        <circle class="gc" cx="180" cy="720" r="170" stroke-width="1" opacity="0.07"/>
+        <circle class="gc" cx="180" cy="720" r="90" stroke-width="1" opacity="0.08"/>
+        <circle class="gc" cx="750" cy="500" r="400" stroke-width="0.8" opacity="0.04"/>
+        <circle class="gc" cx="420" cy="120" r="90" stroke-width="1.2" opacity="0.08"/>
+        <polygon class="gc" points="1050,60 1180,280 920,280" stroke-width="1" opacity="0.07"/>
+        <polygon class="gc" points="80,300 200,520 -40,520" stroke-width="1" opacity="0.06"/>
+        <polygon class="gc" points="600,750 720,880 480,880" stroke-width="1" opacity="0.06"/>
+        <circle class="gf" cx="640" cy="150" r="3.5" opacity="0.10"/>
+        <circle class="gf" cx="960" cy="420" r="3" opacity="0.09"/>
+        <circle class="gf" cx="330" cy="460" r="2.5" opacity="0.09"/>
+        <circle class="gf" cx="1200" cy="140" r="3" opacity="0.08"/>
+        <circle class="gf" cx="820" cy="680" r="3.5" opacity="0.09"/>
+      </svg>
+    </div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-text">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span>Marketing</span>
+      </div>
+      <div class="hero-eyebrow">✦ Marketing Leadership &amp; Strategy</div>
+      <div class="hero-name-container">
+        <h1 class="hero-name">Built to<br /><em>Drive Growth</em></h1>
+        <img class="mobile-photo" src="TH_Headshot.png" alt="Tyler Hadley" />
+      </div>
+      <p class="hero-title">B2B marketing leader with a decade of hands-on experience turning strategy into pipeline. From brand and demand gen to paid media and content, I build the programs that bring buyers in and keep revenue moving.</p>
+
+      <div class="hero-roles">
+        <span class="role-pill"><span class="dot"></span>VP / Director of Marketing</span>
+        <span class="role-pill"><span class="dot"></span>Marketing Manager</span>
+        <span class="role-pill"><span class="dot"></span>Marketing Specialist</span>
+        <span class="role-pill"><span class="dot"></span>Communications Consultant</span>
+        <span class="role-pill"><span class="dot"></span>Brand Strategist</span>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">Demand Generation</span>
+        <span class="tag">Performance Marketing</span>
+        <span class="tag">Content Strategy</span>
+        <span class="tag">Brand Management</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Hire Me for Marketing
+        </a>
+        <a href="TH2026_Resume.pdf" download class="btn-secondary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          <img src="TH_Headshot.png" alt="Tyler Hadley" />
+        </div>
+        <div class="location-badge">
+          <div class="loc-main">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Wilbraham, MA</span>
+          </div>
+          <div class="loc-sub">Remote &amp; Hybrid · Willing to travel up to 80 miles to office</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section id="metrics" class="section-alt">
+    <div class="section-label">Marketing by the numbers</div>
+    <h2 class="section-heading">Performance That Proves It</h2>
+    <p class="section-sub">Real results across demand generation, paid media, content, and brand — not estimates, not projections.</p>
+    <div class="metrics-grid">
+      <div class="metric-card fade-up">
+        <div class="metric-number">850%</div>
+        <div class="metric-label">ROAS Achieved</div>
+        <div class="metric-context">Performance marketing return on ad spend across Google and Facebook</div>
+      </div>
+      <div class="metric-card fade-up delay-1">
+        <div class="metric-number">15%</div>
+        <div class="metric-label">YoY Revenue Growth</div>
+        <div class="metric-context">Marketing-driven contribution to company-wide revenue growth</div>
+      </div>
+      <div class="metric-card fade-up delay-2">
+        <div class="metric-number">150+</div>
+        <div class="metric-label">Monthly Inquiries Generated</div>
+        <div class="metric-context">80% converted to intakes or appointments at Way Finders</div>
+      </div>
+      <div class="metric-card fade-up delay-3">
+        <div class="metric-number">45K</div>
+        <div class="metric-label">Monthly Web Sessions</div>
+        <div class="metric-context">Managed high-traffic digital presence across 7 program areas</div>
+      </div>
+      <div class="metric-card fade-up delay-1">
+        <div class="metric-number">5,000+</div>
+        <div class="metric-label">Email Subscribers</div>
+        <div class="metric-context">Segmented campaigns with performance-informed content refinement</div>
+      </div>
+      <div class="metric-card fade-up delay-2">
+        <div class="metric-number">$200K</div>
+        <div class="metric-label">Rebrand Budget Managed</div>
+        <div class="metric-context">Full org rebrand: name, logo, web, signage, photography</div>
+      </div>
+      <div class="metric-card fade-up delay-3">
+        <div class="metric-number">7</div>
+        <div class="metric-label">Program Areas Managed</div>
+        <div class="metric-context">Integrated campaigns across digital, email, paid, events, and PR</div>
+      </div>
+      <div class="metric-card fade-up delay-4">
+        <div class="metric-number">900+</div>
+        <div class="metric-label">Proposals Annually</div>
+        <div class="metric-context">Repeatable templates and messaging standards driving consistency</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-white">
+    <div class="section-label">Marketing career</div>
+    <h2 class="section-heading">Where I've Driven Impact</h2>
+    <p class="section-sub">A decade of building programs from scratch, optimizing what exists, and proving results with data.</p>
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2019 – Present</div>
+        <div class="timeline-role">Vice President of Sales &amp; Marketing</div>
+        <div class="timeline-company">DDS Acoustical Specialties LLC · Westfield, MA</div>
+        <ul class="timeline-bullets">
+          <li>Lead day-to-day B2B marketing execution, managing website content, campaign launches, email outreach, paid media, and sales enablement for a professional services company.</li>
+          <li>Translate complex technical service offerings into differentiated messaging across web pages, proposals, case studies, ads, and outbound outreach.</li>
+          <li>Achieve 850% ROAS and contribute to 15% year-over-year revenue growth by optimizing demand generation across organic and paid channels.</li>
+          <li>Manage 900+ annual quotes and proposals, building repeatable templates and documentation standards that cut turnaround time and improved output consistency.</li>
+          <li>Own performance reporting across marketing activity, synthesizing campaign results and revenue contribution into clear summaries for leadership decision-making.</li>
+          <li>Integrate AI tools (Claude, ChatGPT, Copilot) into content workflows to improve output quality and reclaim hours per week across recurring marketing deliverables.</li>
+        </ul>
+      </div>
+      <div class="timeline-item fade-up delay-1">
+        <div class="timeline-date">2016 – 2022</div>
+        <div class="timeline-role">Marketing &amp; Communications Manager</div>
+        <div class="timeline-company">Way Finders Inc. · Springfield, MA</div>
+        <ul class="timeline-bullets">
+          <li>Led multi-channel marketing strategy and execution across seven lines of business, driving demand through web, email, paid media, events, PR, and content development.</li>
+          <li>Managed high-traffic digital properties averaging 45,000 website sessions per month, owning content updates, landing page messaging, and conversion-focused optimization.</li>
+          <li>Built and executed email communications to a 5,000+ subscriber audience, driving program participation through segmented outreach and performance-informed content refinement.</li>
+          <li>Managed Google and Facebook advertising generating 150+ monthly inquiries, with 80% converting to intakes or appointments.</li>
+          <li>Project-managed a $200,000 organization-wide rebrand, coordinating cross-functional teams and external vendors through a hard public launch deadline.</li>
+          <li>Partnered with IT and Business Intelligence to strengthen analytics infrastructure, enabling data-informed decisions on channel performance and communications effectiveness.</li>
+          <li>Led and mentored up to 3 communications staff members, setting milestones, delegating deliverables, and quality-reviewing all output before publication.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-alt">
+    <div class="section-label">Marketing toolkit</div>
+    <h2 class="section-heading">Skills &amp; Platforms</h2>
+    <p class="section-sub">The full stack of what I bring to a marketing role, from strategy and storytelling to execution and analytics.</p>
+    <div class="skills-grid">
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Strategy &amp; Demand Generation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">B2B Demand Generation</span>
+          <span class="skill-tag">Go-to-Market Execution</span>
+          <span class="skill-tag">Campaign Strategy</span>
+          <span class="skill-tag">Lead Generation</span>
+          <span class="skill-tag">Funnel Optimization</span>
+          <span class="skill-tag">Performance Marketing</span>
+          <span class="skill-tag">Paid Media (Google + Facebook)</span>
+          <span class="skill-tag">SEO Strategy</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-1">
+        <div class="skill-group-title">Content &amp; Brand</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Content Marketing &amp; Storytelling</span>
+          <span class="skill-tag">Brand Messaging &amp; Positioning</span>
+          <span class="skill-tag">Copywriting</span>
+          <span class="skill-tag">Landing Page Optimization</span>
+          <span class="skill-tag">Email Marketing &amp; Segmentation</span>
+          <span class="skill-tag">Thought Leadership</span>
+          <span class="skill-tag">Video &amp; Visual Content</span>
+          <span class="skill-tag">AI-Assisted Content Workflows</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-2">
+        <div class="skill-group-title">Analytics &amp; Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">KPI Management</span>
+          <span class="skill-tag">Campaign Performance Reporting</span>
+          <span class="skill-tag">ROAS Optimization</span>
+          <span class="skill-tag">Conversion Rate Optimization</span>
+          <span class="skill-tag">A/B Testing</span>
+          <span class="skill-tag">Marketing Attribution</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-3">
+        <div class="skill-group-title">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">Microsoft Ads</span>
+          <span class="skill-tag">Mailchimp</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Adobe Creative Suite</span>
+          <span class="skill-tag">Microsoft 365 &amp; SharePoint</span>
+          <span class="skill-tag">Pipedrive CRM</span>
+          <span class="skill-tag">AI LLMs (Claude, ChatGPT, Copilot)</span>
+          <span class="skill-tag">Google Tag Manager</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section-white">
+    <div class="section-label">Selected marketing work</div>
+    <h2 class="section-heading">Programs &amp; Campaigns</h2>
+    <p class="section-sub">High-impact initiatives across paid media, brand, email, and digital performance.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Performance Marketing</div>
+          <div class="portfolio-card-title">Paid Media &amp; Demand Generation</div>
+          <div class="portfolio-card-desc">Designed and managed paid media strategy across Google and Facebook, generating qualified leads with exceptional ROAS.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">ROAS</span><span class="portfolio-stat-value">850%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Monthly Inquiries</span><span class="portfolio-stat-value">150+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Lead-to-Intake Rate</span><span class="portfolio-stat-value">80%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">YoY Revenue Growth</span><span class="portfolio-stat-value">15%</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-1">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Brand Strategy</div>
+          <div class="portfolio-card-title">$200K Organization Rebrand</div>
+          <div class="portfolio-card-desc">Project-managed a full organization-wide rebrand from HAPHousing to Way Finders, coordinating name, logo, website, photography, and signage rollout across 7 program areas.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Budget Managed</span><span class="portfolio-stat-value">$200,000</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Touchpoints</span><span class="portfolio-stat-value">Logo, Web, Signage, Photo</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Program Areas</span><span class="portfolio-stat-value">7</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Launch Outcome</span><span class="portfolio-stat-value">On-Time, Zero Rollback</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-2">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Digital &amp; Email</div>
+          <div class="portfolio-card-title">Multi-Channel Digital Presence</div>
+          <div class="portfolio-card-desc">Owned content strategy, email campaigns, and digital performance across a high-traffic multi-program organization.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Monthly Web Sessions</span><span class="portfolio-stat-value">45,000</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Email Subscriber List</span><span class="portfolio-stat-value">5,000+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Program Areas Managed</span><span class="portfolio-stat-value">7</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Channels</span><span class="portfolio-stat-value">Web, Email, Paid, PR, Events</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-3">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Sales Enablement</div>
+          <div class="portfolio-card-title">Proposal &amp; Messaging System</div>
+          <div class="portfolio-card-desc">Built repeatable proposal templates, messaging standards, and a CRM workflow that standardized how complex services get communicated and sold.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Annual Proposals</span><span class="portfolio-stat-value">900+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Lead Response SLA</span><span class="portfolio-stat-value">&lt;24 Hours</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Qualified Lead to Proposal</span><span class="portfolio-stat-value">90%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Proposal Close Rate</span><span class="portfolio-stat-value">70%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-label">Ready to talk</div>
+      <h2 class="cta-heading">Let's Build Something<br /><em>That Performs</em></h2>
+      <p class="cta-sub">I'm actively looking for marketing leadership and specialist roles where strategy, execution, and measurable outcomes are equally valued. Based in Wilbraham, MA. Remote and hybrid available.</p>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn-cta-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Get In Touch
+        </a>
+        <a href="TH2026_Resume.pdf" download class="btn-cta-secondary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Tyler <span>Hadley</span></div>
+    <div class="footer-copy">© 2026 Tyler Hadley · Wilbraham, MA</div>
+    <a href="TH2026_Resume.pdf" download class="footer-resume">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Resume PDF
+    </a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a:not(.nav-dropdown > a)').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 16px rgba(26,44,61,.12)' : 'none';
+    });
+  </script>
+</body>
+</html>

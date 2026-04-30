@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NV5LHCR6');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyler Hadley — Customer Success Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f0f4f8;
+      --bg-2:       #e4ecf3;
+      --surface:    #ffffff;
+      --teal:       #0d9488;
+      --teal-light: #14b8a6;
+      --teal-dim:   #0f766e;
+      --teal-glow:  rgba(13,148,136,.13);
+      --teal-faint: rgba(13,148,136,.07);
+      --ink:        #1a2c3d;
+      --ink-2:      #334e68;
+      --muted:      #627d98;
+      --border:     rgba(26,44,61,.10);
+      --border-2:   rgba(26,44,61,.06);
+      --serif:      'DM Serif Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+      --mono:       'Space Mono', monospace;
+      --radius:     10px;
+      --transition: .28s cubic-bezier(.4,0,.2,1);
+      --shadow-sm:  0 1px 4px rgba(26,44,61,.08);
+      --shadow-md:  0 4px 16px rgba(26,44,61,.10);
+      --shadow-lg:  0 8px 32px rgba(26,44,61,.13);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    ::selection { background: var(--teal-light); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-2); }
+    ::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 3px; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(240,244,248,.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .78rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; transition: color var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: var(--teal) !important; color: #fff !important; padding: .4rem 1rem; border-radius: 5px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--teal-dim) !important; color: #fff !important; }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: .3rem; cursor: pointer; }
+    .nav-dropdown > a svg { transition: transform var(--transition); }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-md);
+      min-width: 210px; padding: .5rem 0; z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: flex; align-items: center; gap: .65rem;
+      padding: .55rem 1.1rem; font-size: .78rem; color: var(--ink-2);
+      text-decoration: none; text-transform: none; letter-spacing: 0;
+      font-weight: 500; transition: background var(--transition), color var(--transition);
+      border-left: 3px solid transparent;
+    }
+    .dropdown-menu a:hover { background: var(--teal-faint); color: var(--teal); border-left-color: var(--teal); }
+    .dropdown-menu a.active { color: var(--teal); border-left-color: var(--teal); background: var(--teal-faint); }
+    .dropdown-menu .dm-label { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: .45rem 1.1rem .2rem; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 7rem 4rem 4rem;
+      position: relative; overflow: hidden;
+      background: linear-gradient(155deg, #deeaf5 0%, #edf3f9 40%, #e2eef7 100%);
+    }
+    .hero-geo { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .hero-geo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background:
+        radial-gradient(ellipse 48% 55% at 76% 46%, rgba(13,148,136,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 28% 28% at 6% 82%, rgba(13,148,136,.05) 0%, transparent 55%);
+    }
+    .hero-text { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--mono); font-size: .7rem; color: var(--teal);
+      letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 1.4rem;
+      background: var(--teal-faint); border: 1px solid rgba(13,148,136,.22);
+      padding: .3rem .85rem; border-radius: 50px;
+    }
+    .hero-name { font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1.05; color: var(--ink); margin-bottom: .6rem; }
+    .hero-name em { color: var(--teal); font-style: italic; }
+    .hero-name-container { display: flex; align-items: center; gap: 1rem; }
+    .mobile-photo { display: none; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; }
+    .hero-title { font-size: 1.05rem; color: var(--ink-2); font-weight: 400; margin-bottom: .9rem; max-width: 480px; line-height: 1.7; }
+    .hero-roles { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    .role-pill { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: 500; color: var(--ink-2); background: var(--surface); border: 1px solid var(--border); padding: .35rem .85rem; border-radius: 50px; box-shadow: var(--shadow-sm); }
+    .role-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.2rem; }
+    .tag { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; padding: .28rem .75rem; border: 1px solid rgba(13,148,136,.28); color: var(--teal-dim); border-radius: 4px; background: var(--teal-faint); }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--teal); color: #fff; padding: .72rem 1.55rem; border-radius: var(--radius); font-weight: 600; font-size: .9rem; text-decoration: none; transition: var(--transition); border: 2px solid var(--teal); box-shadow: 0 2px 12px rgba(13,148,136,.28); }
+    .btn-primary:hover { background: var(--teal-dim); border-color: var(--teal-dim); transform: translateY(-2px); box-shadow: 0 4px 18px rgba(13,148,136,.38); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: .5rem; background: var(--surface); color: var(--ink-2); padding: .72rem 1.55rem; border-radius: var(--radius); font-weight: 500; font-size: .9rem; text-decoration: none; border: 2px solid var(--border); transition: var(--transition); box-shadow: var(--shadow-sm); }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; z-index: 2; }
+    .photo-frame { position: relative; width: 330px; height: 390px; }
+    .photo-frame::before { content: ''; position: absolute; top: 14px; left: 14px; right: -14px; bottom: -14px; border: 2px solid var(--teal-light); border-radius: var(--radius); opacity: .38; }
+    .photo-placeholder { width: 100%; height: 100%; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: var(--shadow-lg); }
+    .photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .location-badge {
+      position: absolute; bottom: -1.4rem; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: .5rem 1rem;
+      font-size: .72rem; color: var(--muted); white-space: nowrap; z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: .2rem;
+      box-shadow: var(--shadow-sm); text-align: center; min-width: 220px;
+    }
+    .location-badge .loc-main { display: flex; align-items: center; gap: .4rem; }
+    .location-badge span { color: var(--teal); font-weight: 600; }
+    .location-badge .loc-sub { font-size: .68rem; color: var(--muted); }
+
+    section { padding: 5.5rem 4rem; }
+    .section-alt   { background: var(--bg-2); }
+    .section-white { background: var(--surface); }
+    .section-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: .75rem; display: flex; align-items: center; gap: .6rem; }
+    .section-label::after { content: ''; display: block; width: 36px; height: 1px; background: var(--teal); opacity: .4; }
+    .section-heading { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.1; color: var(--ink); margin-bottom: .9rem; }
+    .section-sub { color: var(--muted); max-width: 520px; font-size: .93rem; margin-bottom: 2.8rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 1.2rem; }
+    .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.3rem; position: relative; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-sm); }
+    .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+    .metric-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(13,148,136,.2); }
+    .metric-number { font-family: var(--serif); font-size: 2.2rem; color: var(--teal); line-height: 1; margin-bottom: .3rem; }
+    .metric-label { font-size: .79rem; color: var(--ink-2); font-weight: 500; line-height: 1.4; }
+    .metric-context { font-size: .7rem; color: var(--muted); margin-top: .38rem; }
+
+    .timeline { position: relative; max-width: 820px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--teal), transparent); }
+    .timeline-item { padding-left: 2.2rem; padding-bottom: 3rem; position: relative; }
+    .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 2px solid var(--surface); }
+    .timeline-date { font-family: var(--mono); font-size: .7rem; color: var(--teal); letter-spacing: .1em; margin-bottom: .4rem; }
+    .timeline-role { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); margin-bottom: .2rem; }
+    .timeline-company { font-size: .84rem; color: var(--muted); margin-bottom: .9rem; }
+    .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: .48rem; }
+    .timeline-bullets li { font-size: .87rem; color: var(--ink-2); padding-left: 1.2rem; position: relative; line-height: 1.6; }
+    .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: .78rem; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(275px, 1fr)); gap: 1.2rem; }
+    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm); }
+    .skill-group-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .9rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .skill-tag { font-size: .77rem; background: var(--bg); border: 1px solid var(--border); padding: .28rem .7rem; border-radius: 4px; color: var(--ink-2); transition: var(--transition); }
+    .skill-tag:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-faint); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(295px, 1fr)); gap: 1.2rem; }
+    .portfolio-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .portfolio-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: rgba(13,148,136,.22); }
+    .portfolio-card-header { padding: 1.4rem 1.4rem .75rem; border-bottom: 1px solid var(--border-2); }
+    .portfolio-category { font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .45rem; }
+    .portfolio-card-title { font-family: var(--serif); font-size: 1.12rem; color: var(--ink); margin-bottom: .38rem; }
+    .portfolio-card-desc { font-size: .81rem; color: var(--muted); line-height: 1.55; }
+    .portfolio-card-body { padding: .9rem 1.4rem 1.4rem; }
+    .portfolio-stat { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 1.2rem; align-items: center; padding: .42rem 0; border-bottom: 1px solid var(--border-2); font-size: .81rem; }
+    .portfolio-stat:last-child { border-bottom: none; }
+    .portfolio-stat-label { color: var(--muted); }
+    .portfolio-stat-value { color: var(--teal); font-weight: 700; font-family: var(--mono); font-size: .78rem; text-align: right; word-break: break-word; }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--ink) 0%, #1e3a52 100%);
+      padding: 5rem 4rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(13,148,136,.12) 0%, transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+    .cta-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: .75rem; }
+    .cta-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+    .cta-heading em { color: var(--teal-light); font-style: italic; }
+    .cta-sub { color: rgba(255,255,255,.6); font-size: .95rem; margin-bottom: 2rem; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--teal); color: #fff; padding: .85rem 2rem; border-radius: var(--radius); font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); border: 2px solid var(--teal); box-shadow: 0 4px 20px rgba(13,148,136,.4); }
+    .btn-cta-primary:hover { background: var(--teal-dim); border-color: var(--teal-dim); transform: translateY(-2px); }
+    .btn-cta-secondary { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: rgba(255,255,255,.8); padding: .85rem 2rem; border-radius: var(--radius); font-weight: 500; font-size: .95rem; text-decoration: none; border: 2px solid rgba(255,255,255,.2); transition: var(--transition); }
+    .btn-cta-secondary:hover { border-color: rgba(255,255,255,.5); color: #fff; transform: translateY(-2px); }
+
+    .breadcrumb { display: flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { color: var(--border); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,.48); padding: 1.8rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { font-family: var(--serif); font-size: 1.1rem; color: #fff; }
+    .footer-brand span { color: var(--teal-light); }
+    .footer-copy { font-size: .76rem; }
+    .footer-resume { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; color: var(--teal-light); text-decoration: none; border: 1px solid rgba(20,184,166,.33); padding: .38rem .85rem; border-radius: 5px; transition: var(--transition); }
+    .footer-resume:hover { background: rgba(20,184,166,.1); }
+
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .delay-4 { transition-delay: .4s; }
+
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); padding: 1.4rem; border-bottom: 1px solid var(--border); gap: .9rem; box-shadow: var(--shadow-md); }
+      .hamburger { display: flex; }
+      .dropdown-menu { position: static; transform: none; box-shadow: none; border: none; border-left: 2px solid var(--teal-faint); padding: .25rem 0; margin-left: .5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
+      .hero-visual { display: none; }
+      .mobile-photo { display: block; }
+      section { padding: 4rem 1.5rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV5LHCR6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Tyler <span>Hadley</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown">
+        <a href="#" class="active">
+          Disciplines
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dm-label">By Focus Area</div>
+          <a href="marketing.html">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Marketing
+          </a>
+          <a href="customer-success.html" class="active">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Customer Success
+          </a>
+          <a href="project-management.html">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Project Management
+          </a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#metrics">Results</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-geo">
+      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs><style>.gc{fill:none;stroke:#0d9488}.gf{fill:#0d9488;stroke:none}</style></defs>
+        <circle class="gc" cx="1100" cy="200" r="320" stroke-width="1" opacity="0.07"/>
+        <circle class="gc" cx="1100" cy="200" r="220" stroke-width="1" opacity="0.08"/>
+        <circle class="gc" cx="1100" cy="200" r="130" stroke-width="1" opacity="0.09"/>
+        <circle class="gc" cx="180" cy="720" r="260" stroke-width="1" opacity="0.06"/>
+        <circle class="gc" cx="180" cy="720" r="170" stroke-width="1" opacity="0.07"/>
+        <circle class="gc" cx="750" cy="500" r="400" stroke-width="0.8" opacity="0.04"/>
+        <circle class="gc" cx="420" cy="120" r="90" stroke-width="1.2" opacity="0.08"/>
+        <polygon class="gc" points="1050,60 1180,280 920,280" stroke-width="1" opacity="0.07"/>
+        <polygon class="gc" points="80,300 200,520 -40,520" stroke-width="1" opacity="0.06"/>
+        <circle class="gf" cx="640" cy="150" r="3.5" opacity="0.10"/>
+        <circle class="gf" cx="960" cy="420" r="3" opacity="0.09"/>
+        <circle class="gf" cx="330" cy="460" r="2.5" opacity="0.09"/>
+        <circle class="gf" cx="820" cy="680" r="3.5" opacity="0.09"/>
+      </svg>
+    </div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-text">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span>Customer Success</span>
+      </div>
+      <div class="hero-eyebrow">✦ Customer Success &amp; Account Management</div>
+      <div class="hero-name-container">
+        <h1 class="hero-name">Relationships<br /><em>That Retain</em></h1>
+        <img class="mobile-photo" src="TH_Headshot.png" alt="Tyler Hadley" />
+      </div>
+      <p class="hero-title">A decade of managing accounts, building trust, and turning satisfied customers into long-term partnerships. I don't just manage relationships. I build the systems that keep them healthy at scale.</p>
+
+      <div class="hero-roles">
+        <span class="role-pill"><span class="dot"></span>Customer Success Manager</span>
+        <span class="role-pill"><span class="dot"></span>Director of Customer Success</span>
+        <span class="role-pill"><span class="dot"></span>Account Manager</span>
+        <span class="role-pill"><span class="dot"></span>Client Relations Manager</span>
+        <span class="role-pill"><span class="dot"></span>Client Services Leader</span>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">Account Retention</span>
+        <span class="tag">95% Satisfaction Rate</span>
+        <span class="tag">CRM-Driven Processes</span>
+        <span class="tag">Proactive Communication</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Hire Me for Customer Success
+        </a>
+        <a href="TH2026_Resume.pdf" download class="btn-secondary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          <img src="TH_Headshot.png" alt="Tyler Hadley" />
+        </div>
+        <div class="location-badge">
+          <div class="loc-main">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Wilbraham, MA</span>
+          </div>
+          <div class="loc-sub">Remote &amp; Hybrid · Willing to travel up to 80 miles to office</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section id="metrics" class="section-alt">
+    <div class="section-label">Customer success by the numbers</div>
+    <h2 class="section-heading">What Retention Looks Like</h2>
+    <p class="section-sub">Satisfaction rates, response times, and account volume that demonstrate what proactive relationship management actually produces.</p>
+    <div class="metrics-grid">
+      <div class="metric-card fade-up">
+        <div class="metric-number">95%</div>
+        <div class="metric-label">Customer Satisfaction Rate</div>
+        <div class="metric-context">Maintained across 30+ direct accounts per year</div>
+      </div>
+      <div class="metric-card fade-up delay-1">
+        <div class="metric-number">&lt;12hr</div>
+        <div class="metric-label">Average Issue Resolution</div>
+        <div class="metric-context">Proactive communication prevents problems before escalation</div>
+      </div>
+      <div class="metric-card fade-up delay-2">
+        <div class="metric-number">&lt;24hr</div>
+        <div class="metric-label">Lead Response SLA</div>
+        <div class="metric-context">CRM-enforced across 1,000+ active prospects</div>
+      </div>
+      <div class="metric-card fade-up delay-3">
+        <div class="metric-number">30+</div>
+        <div class="metric-label">Accounts Managed Per Year</div>
+        <div class="metric-context">Simultaneously, with structured communication cadences</div>
+      </div>
+      <div class="metric-card fade-up delay-1">
+        <div class="metric-number">$500K+</div>
+        <div class="metric-label">Personal Annual Revenue</div>
+        <div class="metric-context">Driven through relationship-based account management</div>
+      </div>
+      <div class="metric-card fade-up delay-2">
+        <div class="metric-number">70%</div>
+        <div class="metric-label">Proposal Close Rate</div>
+        <div class="metric-context">90% of qualified leads advanced to proposal stage</div>
+      </div>
+      <div class="metric-card fade-up delay-3">
+        <div class="metric-number">15%</div>
+        <div class="metric-label">Membership Growth (YPS)</div>
+        <div class="metric-context">Driven through improved onboarding and value communication</div>
+      </div>
+      <div class="metric-card fade-up delay-4">
+        <div class="metric-number">150+</div>
+        <div class="metric-label">Active Leads in Pipeline</div>
+        <div class="metric-context">Managed simultaneously with CRM discipline and follow-up systems</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-white">
+    <div class="section-label">Customer success career</div>
+    <h2 class="section-heading">How I've Built &amp; Kept Accounts</h2>
+    <p class="section-sub">From first contact through long-term retention, I own the full relationship lifecycle and build the processes that keep it healthy.</p>
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <div class="timeline-date">2019 – Present</div>
+        <div class="timeline-role">Vice President of Sales &amp; Marketing</div>
+        <div class="timeline-company">DDS Acoustical Specialties LLC · Westfield, MA</div>
+        <ul class="timeline-bullets">
+          <li>Serve as primary client contact across 30+ active commercial accounts per year, maintaining 95% customer satisfaction through structured communication cadences and proactive issue tracking.</li>
+          <li>Resolve customer issues with an average turnaround under 12 hours, preventing escalation through consistent follow-through and clear internal coordination with operations and fulfillment.</li>
+          <li>Manage the full client lifecycle from initial inquiry through proposal, close, and post-delivery follow-up, building repeat engagement across a diverse B2B account base.</li>
+          <li>Implemented Pipedrive CRM to standardize pipeline tracking, lead documentation, and follow-up workflows across 1,000+ prospects, reducing response time to under 24 hours.</li>
+          <li>Coordinate internally across operations, estimating, and fulfillment to ensure client expectations align with delivery capability before commitment, preventing scope misalignment.</li>
+          <li>Generate $500K+ in personal annual sales at 40% gross margin through relationship-based account management and disciplined follow-up systems.</li>
+        </ul>
+      </div>
+      <div class="timeline-item fade-up delay-1">
+        <div class="timeline-date">2016 – 2022</div>
+        <div class="timeline-role">Marketing &amp; Communications Manager</div>
+        <div class="timeline-company">Way Finders Inc. · Springfield, MA</div>
+        <ul class="timeline-bullets">
+          <li>Managed external and internal communications for a multi-program housing nonprofit, coordinating messaging across seven program areas and multiple department stakeholders.</li>
+          <li>Built and executed email communications to a 5,000+ subscriber list, maintaining consistent engagement through segmented outreach and audience-informed content strategy.</li>
+          <li>Managed digital campaigns generating 150+ monthly inquiries with 80% converting to intakes, ensuring program accessibility through clear, audience-first communications.</li>
+          <li>Partnered with IT and Business Intelligence to strengthen tracking and reporting infrastructure, enabling data-informed decisions across programs and communications.</li>
+          <li>Led and mentored up to 3 communications staff members, setting milestones, delegating deliverables, and maintaining quality standards across all client-facing output.</li>
+        </ul>
+      </div>
+      <div class="timeline-item fade-up delay-2">
+        <div class="timeline-date">2021 – Present</div>
+        <div class="timeline-role">Board Member (Vice President / Treasurer)</div>
+        <div class="timeline-company">Young Professional Society of Greater Springfield</div>
+        <ul class="timeline-bullets">
+          <li>Chair the Membership Committee, building acquisition and retention programs that contributed to 15% annual membership growth through improved onboarding workflows and value communication.</li>
+          <li>Administer membership systems for 150+ individual and business members, improving operational consistency and reducing administrative workload by 50%.</li>
+          <li>Coordinate end-to-end planning for 24+ annual events averaging 30+ attendees, managing multi-stakeholder communications and member experience across each event cycle.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-alt">
+    <div class="section-label">Customer success toolkit</div>
+    <h2 class="section-heading">Skills &amp; Platforms</h2>
+    <p class="section-sub">Everything I bring to a customer success role, from relationship management and retention strategy to CRM systems and data reporting.</p>
+    <div class="skills-grid">
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Relationship &amp; Account Management</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Client Relationship Management</span>
+          <span class="skill-tag">Account Retention &amp; Growth</span>
+          <span class="skill-tag">Onboarding &amp; Adoption</span>
+          <span class="skill-tag">Renewal Strategy</span>
+          <span class="skill-tag">Issue Resolution &amp; Escalation</span>
+          <span class="skill-tag">Multi-Stakeholder Engagement</span>
+          <span class="skill-tag">Executive Communication</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-1">
+        <div class="skill-group-title">Process &amp; Operations</div>
+        <div class="skill-tags">
+          <span class="skill-tag">CRM Implementation (Pipedrive)</span>
+          <span class="skill-tag">Pipeline Management</span>
+          <span class="skill-tag">SLA Monitoring</span>
+          <span class="skill-tag">Workflow Standardization</span>
+          <span class="skill-tag">Documentation Standards</span>
+          <span class="skill-tag">Cross-Functional Coordination</span>
+          <span class="skill-tag">Scope &amp; Budget Alignment</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-2">
+        <div class="skill-group-title">Analytics &amp; Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">KPI Tracking</span>
+          <span class="skill-tag">Satisfaction Reporting</span>
+          <span class="skill-tag">Funnel Conversion Analysis</span>
+          <span class="skill-tag">Account Health Monitoring</span>
+          <span class="skill-tag">Revenue Attribution</span>
+          <span class="skill-tag">Performance Dashboards</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up delay-3">
+        <div class="skill-group-title">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Pipedrive CRM</span>
+          <span class="skill-tag">Microsoft 365 &amp; SharePoint</span>
+          <span class="skill-tag">Mailchimp</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Wild Apricot</span>
+          <span class="skill-tag">AI LLMs (Claude, ChatGPT, Copilot)</span>
+          <span class="skill-tag">Adobe Creative Suite</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section-white">
+    <div class="section-label">Selected customer success work</div>
+    <h2 class="section-heading">Account Programs &amp; Outcomes</h2>
+    <p class="section-sub">How I've built systems and relationships that keep customers satisfied, retained, and growing.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Account Management</div>
+          <div class="portfolio-card-title">B2B Account Retention System</div>
+          <div class="portfolio-card-desc">Built and maintained a structured account management process for 30+ active B2B accounts simultaneously, with proactive communication and rapid issue resolution.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Customer Satisfaction</span><span class="portfolio-stat-value">95%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Avg Issue Resolution</span><span class="portfolio-stat-value">&lt;12 Hours</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Active Accounts / Year</span><span class="portfolio-stat-value">30+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Annual Revenue Managed</span><span class="portfolio-stat-value">$500K+</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-1">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">CRM &amp; Pipeline Operations</div>
+          <div class="portfolio-card-title">CRM Implementation &amp; Workflow Design</div>
+          <div class="portfolio-card-desc">Implemented Pipedrive CRM from scratch, building lead tracking, follow-up automation, and pipeline reporting that standardized how the entire book of business is managed.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Lead Response SLA</span><span class="portfolio-stat-value">&lt;24 Hours</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Prospects in System</span><span class="portfolio-stat-value">1,000+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Lead to Proposal Rate</span><span class="portfolio-stat-value">90%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Proposal Close Rate</span><span class="portfolio-stat-value">70%</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-2">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Membership Retention</div>
+          <div class="portfolio-card-title">YPS Membership Growth Program</div>
+          <div class="portfolio-card-desc">Chaired the Membership Committee at the Young Professional Society, building acquisition and retention systems that drove consistent membership growth year over year.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Annual Membership Growth</span><span class="portfolio-stat-value">15%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Members Managed</span><span class="portfolio-stat-value">150+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Admin Workload Reduced</span><span class="portfolio-stat-value">50%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Annual Events Delivered</span><span class="portfolio-stat-value">24+</span></div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-3">
+        <div class="portfolio-card-header">
+          <div class="portfolio-category">Engagement &amp; Communications</div>
+          <div class="portfolio-card-title">Audience Engagement at Scale</div>
+          <div class="portfolio-card-desc">Managed multi-channel communications for a 5,000+ subscriber audience, using segmentation and performance data to maintain consistent engagement and program participation.</div>
+        </div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Email Subscribers</span><span class="portfolio-stat-value">5,000+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Monthly Inquiries Generated</span><span class="portfolio-stat-value">150+</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Inquiry-to-Intake Rate</span><span class="portfolio-stat-value">80%</span></div>
+          <div class="portfolio-stat"><span class="portfolio-stat-label">Program Areas Served</span><span class="portfolio-stat-value">7</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-label">Ready to talk</div>
+      <h2 class="cta-heading">Let's Talk About<br /><em>Keeping Customers</em></h2>
+      <p class="cta-sub">I'm actively looking for customer success and account management roles where relationships, retention, and measurable outcomes drive the work. Based in Wilbraham, MA. Remote and hybrid available.</p>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn-cta-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Get In Touch
+        </a>
+        <a href="TH2026_Resume.pdf" download class="btn-cta-secondary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Tyler <span>Hadley</span></div>
+    <div class="footer-copy">© 2026 Tyler Hadley · Wilbraham, MA</div>
+    <a href="TH2026_Resume.pdf" download class="footer-resume">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Resume PDF
+    </a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a:not(.nav-dropdown > a)').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 16px rgba(26,44,61,.12)' : 'none';
+    });
+  </script>
+</body>
+</html>
