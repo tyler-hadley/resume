@@ -227,6 +227,23 @@
     .footer-resume { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; color: var(--teal-light); text-decoration: none; border: 1px solid rgba(20,184,166,.33); padding: .38rem .85rem; border-radius: 5px; transition: var(--transition); }
     .footer-resume:hover { background: rgba(20,184,166,.1); }
 
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-detail { display: flex; align-items: center; gap: .9rem; padding: .85rem 0; border-bottom: 1px solid var(--border); font-size: .89rem; color: var(--ink-2); text-decoration: none; transition: color var(--transition); }
+    .contact-detail:hover { color: var(--teal); }
+    .contact-detail-icon { color: var(--teal); width: 20px; text-align: center; flex-shrink: 0; }
+    .contact-links { display: flex; gap: 1rem; margin-top: 1.8rem; flex-wrap: wrap; }
+    .social-btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); border-radius: var(--radius); padding: .55rem 1.1rem; font-size: .81rem; color: var(--ink-2); text-decoration: none; background: var(--surface); box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .social-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .contact-form { display: flex; flex-direction: column; gap: .95rem; }
+    .form-group { display: flex; flex-direction: column; gap: .38rem; }
+    .form-group label { font-size: .76rem; color: var(--muted); font-weight: 500; letter-spacing: .05em; }
+    .form-group input, .form-group textarea, .form-group select { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: .72rem 1rem; color: var(--ink); font-family: var(--sans); font-size: .89rem; outline: none; box-shadow: var(--shadow-sm); transition: border-color var(--transition), box-shadow var(--transition); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-glow); }
+    .form-group textarea { resize: vertical; min-height: 115px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .95rem; }
+    .form-note { font-size: .74rem; color: var(--muted); }
+    .form-success { display: none; background: var(--teal-faint); border: 1px solid rgba(13,148,136,.3); border-radius: var(--radius); padding: .9rem 1.1rem; font-size: .87rem; color: var(--teal-dim); text-align: center; }
+
     .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     .delay-1 { transition-delay: .1s; }
@@ -244,6 +261,8 @@
       .hero-visual { display: none; }
       .mobile-photo { display: block; }
       section { padding: 4rem 1.5rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.2rem; }
+      .form-row { grid-template-columns: 1fr; }
       .cta-section { padding: 4rem 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; text-align: center; }
     }
@@ -278,9 +297,8 @@
       </li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#metrics">Results</a></li>
-      <li><a href="index.html#experience">Experience</a></li>
       <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -338,13 +356,9 @@
       </div>
 
       <div class="hero-actions">
-        <a href="index.html#contact" class="btn-primary">
+        <a href="#contact" class="btn-primary">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          Hire Me for Customer Success
-        </a>
-        <a href="TH2026_Resume.pdf" download class="btn-secondary">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Resume
+          Get In Touch for a Customer Success Role
         </a>
       </div>
     </div>
@@ -582,7 +596,7 @@
       <h2 class="cta-heading">Let's Talk About<br /><em>Keeping Customers</em></h2>
       <p class="cta-sub">I'm actively looking for customer success and account management roles where relationships, retention, and measurable outcomes drive the work. Based in Wilbraham, MA. Remote and hybrid available.</p>
       <div class="cta-actions">
-        <a href="index.html#contact" class="btn-cta-primary">
+        <a href="#contact" class="btn-primary">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
           Get In Touch
         </a>
@@ -590,6 +604,63 @@
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Resume
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-white">
+    <div class="contact-inner">
+      <div>
+        <div class="section-label">Let's connect</div>
+        <h2 class="section-heading">Open to the Right Opportunity</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">I'm actively exploring leadership and specialist roles in Sales, Marketing, and Customer Success at $90,000+. Based in Wilbraham, MA — remote and hybrid available, and willing to travel up to 80 miles to office.</p>
+        <a href="tel:4133488178" class="contact-detail">
+          <span class="contact-detail-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.22 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>413.348.8178
+        </a>
+        <a href="mailto:thadley3384@gmail.com" class="contact-detail">
+          <span class="contact-detail-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg></span>thadley3384@gmail.com
+        </a>
+        <a href="https://www.tyler-hadley.com" target="_blank" class="contact-detail">
+          <span class="contact-detail-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>www.tyler-hadley.com
+        </a>
+        <a href="https://www.linkedin.com/in/tylerhadley/" target="_blank" rel="noopener" class="contact-detail">
+          <span class="contact-detail-icon"><svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>LinkedIn Profile
+        </a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/tylerhadley/" target="_blank" rel="noopener" class="social-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4v14h-4v-14zm7 0h3.8v2h.1c.5-1 1.7-2 3.5-2 3.8 0 4.5 2.5 4.5 5.8v6.2h-4v-5.5c0-1.3 0-3-1.8-3s-2 1.4-2 2.9v5.6h-4v-14z"/></svg>LinkedIn
+          </a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvrnywg" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="Jane" required /></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith" required /></div>
+          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
+          <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Acme Corp" /></div>
+          <div class="form-group">
+            <label for="role">Role Type</label>
+            <select id="role" name="role_type">
+              <option value="">Select a role type...</option>
+              <option>VP / Director of Sales</option>
+              <option>VP / Director of Marketing</option>
+              <option>Customer Success Director / Manager</option>
+              <option>Sales Manager / Account Executive</option>
+              <option>Marketing Manager / Specialist</option>
+              <option>Revenue Operations</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"  placeholder="Tell me about the opportunity..."></textarea></div>
+          <p class="form-note">I typically respond within one business day.</p>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Send Message
+          </button>
+          <div class="form-success" id="formSuccess">✓ Thanks for reaching out! I'll be in touch soon.</div>
+        </form>
       </div>
     </div>
   </section>

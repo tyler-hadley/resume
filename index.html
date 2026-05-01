@@ -214,7 +214,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .value-icon { color: var(--teal); flex-shrink: 0; margin-top: .15rem; }
     .value-text strong { display: block; font-size: .87rem; color: var(--ink); margin-bottom: .2rem; }
     .value-text span { font-size: .79rem; color: var(--muted); }
-
+    .disciplines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2.4rem; }
+    .discipline-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .discipline-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(13,148,136,.2); }
+    .discipline-title { font-family: var(--serif); font-size: 1.18rem; color: var(--ink); margin: .55rem 0 .4rem; line-height: 1.2; }
+    .discipline-card p { color: var(--muted); line-height: 1.75; }
     /* ── METRICS ── */
     .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 1.2rem; }
     .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.3rem; position: relative; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-sm); }
@@ -361,7 +365,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
       <li><a href="#about">About</a></li>
       <li><a href="#metrics">Results</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#portfolio">Work</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -430,21 +433,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1 class="hero-name">Tyler<br /><em>Hadley</em></h1>
         <img class="mobile-photo" src="TH_Headshot.png" alt="Tyler Hadley smiling and facing the camera in a professional setting, wearing business attire. The background shows a bright office environment. The mood is confident and approachable." />
       </div>
-      <p class="hero-title">Sales, Marketing &amp; Customer Success leader with a consultative approach and a track record of driving revenue, building pipelines, and delivering measurable results.</p>
+      <p class="hero-title">Trusted to lead growth, retention, and delivery across marketing, customer success, and project operations.</p>
 
       <div class="hero-roles">
-        <span class="role-pill"><span class="dot"></span>Sales Leadership &amp; Strategy</span>
-        <span class="role-pill"><span class="dot"></span>Marketing Leadership &amp; Strategy</span>
-        <span class="role-pill"><span class="dot"></span>Customer Success Leadership</span>
-        <span class="role-pill"><span class="dot"></span>Sales Specialist</span>
-        <span class="role-pill"><span class="dot"></span>Marketing Specialist</span>
+        <span class="role-pill"><span class="dot"></span>Marketing &amp; Demand Generation</span>
+        <span class="role-pill"><span class="dot"></span>Customer Success &amp; Retention</span>
+        <span class="role-pill"><span class="dot"></span>Project Management &amp; Delivery</span>
       </div>
 
       <div class="hero-tags">
-        <span class="tag">$90K+ Roles</span>
+        <span class="tag">$90K+ roles</span>
         <span class="tag">Wilbraham, MA</span>
-        <span class="tag">Remote &amp; Hybrid Available</span>
-        <span class="tag">Willing to Travel up to 80mi</span>
+        <span class="tag">Remote &amp; hybrid available</span>
+        <span class="tag">Willing to travel up to 80 miles</span>
       </div>
 
       <div class="hero-actions">
@@ -480,44 +481,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="about-inner">
       <div>
         <div class="section-label">Who I am</div>
-        <h2 class="section-heading">Customer-First.<br />Data-Driven.<br />Results-Oriented.</h2>
+        <h2 class="section-heading">A Decade of Building Systems, Campaigns, and Relationships.</h2>
         <div class="about-body">
-          <p>I'm a <strong>sales and marketing leader</strong> with over a decade of experience building trust across diverse stakeholders — from early-stage prospects to long-term accounts. I bring a consultative approach that translates complex offerings into clear, compelling value.</p>
-          <p>Whether I'm managing a 150+ lead pipeline, leading a full-scale rebrand, or optimizing paid media campaigns for maximum ROAS, I thrive at the intersection of <strong>strategy and execution</strong>. I create repeatable processes that strengthen every stage from demand generation through close and beyond.</p>
-          <p>I hold a <strong>B.A. in Mass Communication, Media Arts and Analysis</strong> from Westfield State University (minor in Business Management) and certifications in Google Ads and AI from the Google Digital Academy.</p>
+          <p>I am a commercial professional whose work sits at the intersection of marketing, customer success, and cross-functional project delivery. My career has been built on a simple pattern: take ownership of the full process, identify where execution is breaking down, and rebuild it into something faster, clearer, and accountable to results.</p>
+          <p>That approach has produced $500K+ in annual personal sales, an 850% return on ad spend, 95% client satisfaction across a 30-plus account portfolio, and a 15% year-over-year revenue contribution. The numbers matter, but what they actually represent is the work underneath: structured CRM workflows, repeatable proposal systems, segmented communication programs, and the kind of stakeholder coordination that keeps complex projects on time and on scope.</p>
+          <h3 class="discipline-title" style="margin-top: 1.5rem;">How I Work</h3>
+          <p>I am drawn to roles where strategic thinking and hands-on execution have to live in the same person. I use AI tools daily to accelerate communication, reporting, and documentation workflows, and I continue to formalize my practice through ongoing certifications in project management, AI fluency, and sales operations. I bring a structured, data-informed approach to messy problems, a bias toward documentation and follow-through, and a track record of building trust quickly with stakeholders at every level.</p>
         </div>
         <div class="open-to-box">
-          <div class="ot-label">Open to leadership &amp; specialist roles in</div>
+          <div class="ot-label">OPEN TO LEADERSHIP &amp; SPECIALIST ROLES ACROSS</div>
           <div class="open-to-grid">
-            <div class="ot-item">VP / Director of Sales</div>
-            <div class="ot-item">VP / Director of Marketing</div>
-            <div class="ot-item">Sales Manager</div>
+            <div class="ot-item">VP of Marketing</div>
             <div class="ot-item">Customer Success Director</div>
-            <div class="ot-item">Sales Specialist / Account Exec</div>
-            <div class="ot-item">Marketing Specialist / Manager</div>
-            <div class="ot-item">Customer Success Manager</div>
-            <div class="ot-item">Revenue Operations</div>
+            <div class="ot-item">Project Manager</div>
+            <div class="ot-item">Demand Generation Manager</div>
+            <div class="ot-item">Customer Retention Specialist</div>
+            <div class="ot-item">Growth Operations Lead</div>
+            <div class="ot-item">Program Delivery Manager</div>
+            <div class="ot-item">Commercial Strategy Specialist</div>
           </div>
         </div>
       </div>
       <div class="about-values fade-up">
         <div class="value-item">
-          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div class="value-text"><strong>Pipeline &amp; Deal Strategy</strong><span>Full-funnel ownership from lead qualification through close and long-term account management.</span></div>
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="value-text"><strong>B.A. in Mass Communication</strong><span>Westfield State University (minor in Business Management)</span></div>
         </div>
         <div class="value-item">
-          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div class="value-text"><strong>Demand Generation &amp; Performance Marketing</strong><span>Organic + paid strategies that generate qualified leads and deliver measurable ROAS.</span></div>
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="value-text"><strong>Google Ads Certification</strong><span>Google Digital Academy</span></div>
         </div>
         <div class="value-item">
-          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="value-text"><strong>Customer Success &amp; Retention</strong><span>Building relationships that last — 95% satisfaction and &lt;12hr average issue resolution.</span></div>
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="value-text"><strong>AI Certification</strong><span>Google Digital Academy</span></div>
         </div>
         <div class="value-item">
-          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <div class="value-text"><strong>Data &amp; Analytics</strong><span>Using reporting and KPI management to guide decisions and continuously optimize performance.</span></div>
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="value-text"><strong>Google Project Management Certificate</strong><span>Google (In Progress)</span></div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="value-text"><strong>Anthropic Certifications</strong><span>Claude 101, Claude Cowork, Claude Code, AI Fluency</span></div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="value-text"><strong>HubSpot Sales Hub</strong><span>HubSpot Academy</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="disciplines" class="section-alt">
+    <div class="section-label">Core disciplines</div>
+    <h2 class="section-heading">Three focus areas for growth, retention, and delivery</h2>
+    <p class="section-sub">Explore the practical work behind each discipline and how I help teams move marketing, customer success, and project delivery forward.</p>
+    <div class="disciplines-grid">
+      <article class="discipline-card fade-up">
+        <div>
+          <div class="section-label">Marketing</div>
+          <h3 class="discipline-title">Demand generation & brand performance</h3>
+        </div>
+        <p>Launch campaigns, web and digital programs, and customer journeys that turn marketing investment into measurable pipeline and qualified leads.</p>
+        <a href="marketing.html" class="btn-secondary">View Marketing</a>
+      </article>
+      <article class="discipline-card fade-up delay-1">
+        <div>
+          <div class="section-label">Customer Success</div>
+          <h3 class="discipline-title">Retention, onboarding & account growth</h3>
+        </div>
+        <p>Design success operations, onboarding experiences, and relationship frameworks that keep customers engaged and growing over time.</p>
+        <a href="customer-success.html" class="btn-secondary">View Customer Success</a>
+      </article>
+      <article class="discipline-card fade-up delay-2">
+        <div>
+          <div class="section-label">Project Management</div>
+          <h3 class="discipline-title">Execution, alignment & delivery</h3>
+        </div>
+        <p>Run cross-functional initiatives with clear scope, timelines, and stakeholder communication so projects launch smoothly and on schedule.</p>
+        <a href="project-management.html" class="btn-secondary">View Project Management</a>
+      </article>
     </div>
   </section>
 
@@ -535,41 +577,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="metric-card fade-up delay-2"><div class="metric-number">900+</div><div class="metric-label">Quotes / Proposals Annually</div><div class="metric-context">Overseeing pricing, scope &amp; follow-up</div></div>
       <div class="metric-card fade-up delay-3"><div class="metric-number">150+</div><div class="metric-label">Monthly Inquiries</div><div class="metric-context">80% converted to intakes/appointments</div></div>
       <div class="metric-card fade-up delay-4"><div class="metric-number">45K</div><div class="metric-label">Monthly Web Sessions</div><div class="metric-context">Managed high-traffic digital presence</div></div>
-    </div>
-  </section>
-
-  <!-- 3. EXPERIENCE -->
-  <section id="experience" class="section-white">
-    <div class="section-label">Career</div>
-    <h2 class="section-heading">Work Experience</h2>
-    <p class="section-sub">A track record of leadership, growth, and measurable impact across B2B sales and marketing.</p>
-    <div class="timeline">
-      <div class="timeline-item fade-up">
-        <div class="timeline-date">2019 – Present</div>
-        <div class="timeline-role">Vice President of Sales &amp; Marketing</div>
-        <div class="timeline-company">DDS Acoustical Specialties LLC · Westfield, MA</div>
-        <ul class="timeline-bullets">
-          <li>Generate $500K+ in personal annual sales across ~30 closed deals; achieved 40% gross margin and exceeded quota.</li>
-          <li>Own full-funnel pipeline management for 150+ active leads and 1,000+ prospects, primarily new-customer acquisition.</li>
-          <li>Convert inbound demand into revenue: qualified 90% of website leads, advanced 90% to proposal, closed 70% of proposals.</li>
-          <li>Oversee 900+ quotes/proposals annually, improving speed and consistency across the sales cycle.</li>
-          <li>Drive 15% YoY revenue growth and achieve 850% ROAS on performance marketing efforts.</li>
-          <li>Implement Pipedrive CRM with &lt;24-hour lead response SLA; project-manage 30+ direct accounts per year at 95% customer satisfaction.</li>
-        </ul>
-      </div>
-      <div class="timeline-item fade-up delay-1">
-        <div class="timeline-date">2016 – 2022</div>
-        <div class="timeline-role">Marketing &amp; Communication Manager</div>
-        <div class="timeline-company">Way Finders Inc. · Springfield, MA</div>
-        <ul class="timeline-bullets">
-          <li>Led marketing strategy and execution across 7 program areas, aligning messaging across digital, email, paid media, events, and PR.</li>
-          <li>Managed Google/Facebook campaigns generating 150+ inquiries/month with 80% conversion to intakes/appointments.</li>
-          <li>Managed high-traffic digital presence averaging 45,000 website sessions/month.</li>
-          <li>Built and executed email communications to a 5,000+ subscriber list.</li>
-          <li>Project-managed a $200,000 organization-wide rebrand (HAPHousing → Way Finders), coordinating full name, logo, website, photography, and signage rollout.</li>
-          <li>Managed and mentored up to 3 marketing volunteers, delegating and quality-checking design deliverables.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -746,9 +753,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="contact-detail-icon"><svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>LinkedIn Profile
         </a>
         <div class="contact-links">
-          <a href="TH2026_Resume.pdf" download class="social-btn">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Resume
-          </a>
           <a href="https://www.linkedin.com/in/tylerhadley/" target="_blank" rel="noopener" class="social-btn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.38-1.12 2.5-2.5 2.5S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4v14h-4v-14zm7 0h3.8v2h.1c.5-1 1.7-2 3.5-2 3.8 0 4.5 2.5 4.5 5.8v6.2h-4v-5.5c0-1.3 0-3-1.8-3s-2 1.4-2 2.9v5.6h-4v-14z"/></svg>LinkedIn
           </a>
@@ -789,9 +793,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <footer>
     <div class="footer-brand">Tyler <span>Hadley</span></div>
     <div class="footer-copy">© 2026 Tyler Hadley · Wilbraham, MA</div>
-    <a href="TH2026_Resume.pdf" download class="footer-resume">
-      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Resume PDF
-    </a>
   </footer>
 
   <script>
